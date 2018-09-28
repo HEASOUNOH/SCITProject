@@ -14,8 +14,8 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import global.sesoc.www.dao.T_MessageRepository;
-import global.sesoc.www.dto.T_MessageRoom;
 import global.sesoc.www.dto.T_Message;
+import global.sesoc.www.dto.T_MessageRoom;
 
 public class EchoHandler extends TextWebSocketHandler {
 

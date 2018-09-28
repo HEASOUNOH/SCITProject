@@ -38,6 +38,11 @@
     .content{
     background-color: white;
     }
+    
+    #Querie{
+    background-color: #0d47a1;
+    color: #ffffff;
+    }
 </style>
 
 <!-- 캘린더 부분 -->
@@ -285,23 +290,23 @@
 							<div class="col-md-10">
 								<div class="card card-tasks">
 									<div class="card-header ">
-										<h4 class="card-title">미 체크리스트</h4>
-										<p class="card-category">어제 하루는 어떠셨나요?</p>
-										<input id="relyInsert" type="button" value="보기">
+										<h4 class="card-title">プログレス</h4>
+										<p class="card-category">スケジュール確認</p>
+										<input id="relyInsert" type="button" value="検査">
 									</div>
 									<div class="card-body ">
 									 <table class="table table-hover" border="1">
-											<tr>
+											<tr id="Querie">
 												<th>完了チェック</th>
 												<th>スケジュール名前</th>
 												<th>ストーリー</th>
 												<th>パーセント</th>
 												<th>修整／削除</th>
 											</tr>
+											<c:if test="${empty replylist}">
 											  <tbody id="result">
-												<c:if test="${empty replylist}">
 													<tr>
-														<td colspan="5">오늘을 포함한 스케줄이 없거나 보기를 클릭해주세요.</td>
+														<td colspan="5">-　検査をクリックしてください。<br>-　今日が含まれたスケジュールがありません。</td>
 													</tr>
 											</c:if>
 									  </tbody>
@@ -418,8 +423,8 @@
 			result += '<td><div class="progressbar"><div class="progress-label" >'+ item.schStartdate + ' ~ ' + item.schEnddate +' "</div></div></td>';
 			result += '<td><div class="num' + index + '"><div></div></div></td>';//<퍼센트>
 			result += '<td>'
-			result += '<input class="schUpdate" data-rno="'+ item.schNum+'" type="button" value="수정" /> ';
-			result += '<input class="schDelete" data-rno="'+ item.schNum+'" type="button" value="삭제" /> ';
+			result += '<input class="schUpdate" data-rno="'+ item.schNum+'" type="image" src="assets/img/crystal.PNG" alt="Submit" width="20" height="20" onclick="schUpdate()"/> ';
+			result += '<input class="schDelete" data-rno="'+ item.schNum+'" type="image" src="assets/img/delete.PNG" alt="Submit" width="20" height="20" onclick="schDelete()"/> ';
 			result += '<input value="'+ item.schNum+'" type="hidden" class="schNum" /> ';
 			result += '</td>'
 		    result += '</tr>';
@@ -444,8 +449,8 @@
 				 	$(this).children().html(parseInt(item) + '<i>%</i>');
 			});
 		});
-		$("input:button.schDelete").click(schDelete);
-		$("input:button.schUpdate").click(schUpdate);
+		$(".schDelete").click(schDelete);
+		$(".schUpdate").click(schUpdate);
 	}
 
 	 function schDelete(){ // 데이터 삭제
