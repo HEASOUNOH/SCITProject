@@ -238,12 +238,9 @@ html, body {
                               <div class="col-md-6 col-lg-4">
 
                                  <div class="form-group">
-                                    <label class="form-label">제목</label> <input type="text"
-                                    id="schTitle"
-                                       class="form-control" name="schTitle"
-                                       placeholder="${schedule.schTitle}">                                       
+                                    <label class="form-label">제목</label> <input type="text" id="schTitle" class="form-control" name="schTitle" value="${schedule.schTitle}">                                       
                                  </div>
-                                 <input type="hidden" id="plaNum" name="plaNum" value="${schedule.plaNum}">
+                                 <input type="hidden" id="plaNum" name="plaNum" value="${schedule.plaNum}"> <!--  -->
                                  <input type="hidden" id="schNum" name="schNum" value="${schedule.schNum}">
 
                                  <br>
@@ -251,7 +248,7 @@ html, body {
                                     <label class="form-label">내용 <span
                                        class="form-label-small">56/100</span></label>
                                     <textarea class="form-control" id="schContent" name="schContent"
-                                       rows="6" placeholder="${schedule.schContent }"></textarea>
+                                       rows="6" >${schedule.schContent}</textarea>
                                  </div>
                                  
                                   
@@ -336,7 +333,7 @@ html, body {
                                  <div class="form-group">
                                     <label class="form-label">시작 날짜</label>
                                     <div class="row gutters-xs">
-                                      <input type="date" class="form-control" name="schStartdate"  id="schStartdate">
+                                      <input type="date" class="form-control" name="schStartdate"  id="schStartdate" value="${schedule.schStartdate}">
                                  
                                     </div>
                                  </div>
@@ -344,7 +341,7 @@ html, body {
                                  <div class="form-group">
                                     <label class="form-label">끝나는 날짜</label>
                                     <div class="row gutters-xs">
-                                      <input type="date" class="form-control" name="schEnddate"  id="schEnddate">
+                                      <input type="date" class="form-control" name="schEnddate"  id="schEnddate" value="${schedule.schEnddate}">
                                     </div>
                                  </div>
 
@@ -445,7 +442,7 @@ html, body {
                                     <div class="row gutters-xs">
                                        <div class="col">
                                        <input type="text" class="form-control"
-                                        id="schLocation" placeholder="${schedule.schLocation}" name="schLocation">
+                                        id="schLocation" value="${schedule.schLocation}" name="schLocation">
                                            </div>
                                             <span class="col-auto">
                                        <button class="btn btn-secondary" type="button"

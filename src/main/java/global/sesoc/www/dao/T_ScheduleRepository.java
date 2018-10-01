@@ -114,6 +114,9 @@ public class T_ScheduleRepository {
 		return list;
 	}
 	
+	
+	
+	
 	public List<T_Schedule> selectCategoryP(String userId) {
 		T_ScheduleMapper mapper = session.getMapper(T_ScheduleMapper.class);
 		List<T_Schedule> replyList = mapper.selectCategoryP(userId);

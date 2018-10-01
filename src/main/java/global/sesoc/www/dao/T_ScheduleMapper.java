@@ -22,6 +22,7 @@ public interface T_ScheduleMapper {
 	public List<T_Schedule> selectUserPlannerSchedule(Map<String, Object> map);
 	public List<T_Schedule> selectMixSchedule(Map<String,String> map);
 	public List<T_Schedule>selectGroupSchedule(int groNum);
+	
 	public List<T_Schedule> selectCategoryP(String userId);
 	public int delete(int schNum);
 	public List<T_Schedule> selectCategoryMoon(String userId);

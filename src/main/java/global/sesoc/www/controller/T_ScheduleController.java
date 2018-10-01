@@ -81,6 +81,7 @@ public class T_ScheduleController {
 	@RequestMapping(value="/scheduleUpdate" , method=RequestMethod.GET)
 	public String scheduleUpdate(T_Schedule schedule,Model model) { 	//화면 요청
 		T_Schedule s=T_ScheduleRepository.selectOneUserSchedule(schedule);
+		                            System.out.println("여기야!!" + s);
 		model.addAttribute("schedule",s);
 		return "schedule/scheduleUpdate";
 	}
@@ -92,6 +93,7 @@ public class T_ScheduleController {
 		List<T_Schedule> list=T_ScheduleRepository.selectPlannerSchedule(schedule.getPlaNum()); //userId를 session의 loginId로
 		model.addAttribute("plaNum",schedule.getPlaNum());
 		model.addAttribute("schdulelist",list);
+	                                 System.out.println("너는 뭐야?" + list);
 		return "redirect:/scheduleList";
 	}
 	@ResponseBody
@@ -158,6 +160,8 @@ public class T_ScheduleController {
 		return list;
 	}
 	
+	
+	
 	@RequestMapping(value="schDelete", method=RequestMethod.POST)
 	public String schDelete(String schNum) {
 		System.out.println(schNum +"schDelete쪽입니다.");
@@ -222,7 +226,7 @@ public class T_ScheduleController {
 	}
 	
 	@RequestMapping(value="/schUpdate", method=RequestMethod.GET)
-	public @ResponseBody int updateCheck(T_Schedule checked) {
+	public @ResponseBody int updateCheck ( T_Schedule checked) {
 		System.out.println(checked+"뭐지");
 		int check = T_ScheduleRepository.updateCheck(checked);
 		

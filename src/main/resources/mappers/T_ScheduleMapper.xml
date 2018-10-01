@@ -89,10 +89,10 @@
     (SELECT PLANUM FROM T_PLIST WHERE USERID=#{userId})
 	</select>
 	<select id="selectOneUserSchedule" parameterType="schedule" resultType="schedule">
-	SELECT *FROM T_SCHEDULE WHERE SCHNUM=#{schNum}
+	SELECT * FROM T_SCHEDULE WHERE SCHNUM=#{schNum}
 	</select>
 	<select id="selectPlannerSchedule" parameterType="int" resultType="schedule">
-	 select *from T_SCHEDULE WHERE PLANUM=#{plaNum}
+	 select * from T_SCHEDULE WHERE PLANUM=#{plaNum}
 	</select>
 	
 	<update id="updateSchedule" parameterType="schedule">
